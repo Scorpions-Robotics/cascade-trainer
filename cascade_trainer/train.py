@@ -102,7 +102,7 @@ def remove_files():
 
 def create_lists():
     for file in neg_files:
-        raw_neg = neg_path + "/" + file
+        raw_neg = f'{neg_path}/' + file
         neg = raw_neg.replace(" ", "_")
         os.rename(raw_neg, neg)
         if neg.endswith((".jpg", ".jpeg", ".png")):
@@ -110,7 +110,7 @@ def create_lists():
                 f.write(neg + "\n")
 
     for file in pos_files:
-        raw_pos = pos_path + "/" + file
+        raw_pos = f'{pos_path}/{file}'
         pos = raw_pos.replace(" ", "_")
         os.rename(raw_pos, pos)
         if pos.endswith((".jpg", ".jpeg", ".png")):
